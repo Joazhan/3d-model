@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+#ascii-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#ascii-container table {
+  border-collapse: collapse;
+}
+
+#mobile-fallback {
+  display: none;
+  position: fixed;
+  inset: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #000;
+  padding: 24px;
+}
+
+#mobile-fallback pre {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.15;
+  letter-spacing: normal;
+  white-space: pre;
+  color: #7dffb3;
+  margin: 0;
+}
+
+#mobile-fallback p {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin: 0;
+}
+
+#controls-panel {
+  position: fixed;
+  bottom: 40px;
+  right: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  z-index: 10;
+}
+
+#model-tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.model-tab {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0 0 6px;
+  cursor: pointer;
+}
+
+.model-tab:hover {
+  color: #ffffff;
+}
+
+.model-tab.active {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+#resolution-control,
+#scale-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#resolution-control label,
+#scale-control label {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  user-select: none;
+}
+
+#resolution-control input[type='range'],
+#scale-control input[type='range'] {
+  width: 140px;
+  accent-color: #ffffff;
+}
+
+.slider-value {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  min-width: 2.5em;
+  opacity: 0;
+  transition: opacity 0.1s;
+  user-select: none;
+}
+
+.slider-value.visible {
+  opacity: 1;
+}
+
+#copy-button {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+#copy-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+body.is-mobile #ascii-container {
+  display: none;
+}
+
+body.is-mobile #mobile-fallback {
+  display: flex;
+}
+
+body.is-mobile #controls-panel {
+  display: none;
+}

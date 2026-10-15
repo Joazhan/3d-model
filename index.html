@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D Model</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&display=swap" rel="stylesheet" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.169.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.169.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="ascii-container"></div>
+
+  <div id="controls-panel">
+    <div id="model-tabs">
+      <button class="model-tab active" data-model="rabbit">Rabbit</button>
+      <button class="model-tab" data-model="supra">Supra</button>
+      <button class="model-tab" data-model="chicken">Chicken</button>
+    </div>
+    <div id="resolution-control">
+      <label for="resolution-slider">Resolution</label>
+      <input type="range" id="resolution-slider" min="0.05" max="0.25" step="0.01" value="0.25" />
+      <span class="slider-value" id="resolution-value"></span>
+    </div>
+    <div id="scale-control">
+      <label for="scale-slider">Scale</label>
+      <input type="range" id="scale-slider" min="0.5" max="3" step="0.1" value="1" />
+      <span class="slider-value" id="scale-value"></span>
+    </div>
+    <button id="copy-button">Copy</button>
+  </div>
+
+  <div id="mobile-fallback">
+    <pre id="mobile-rabbit"></pre>
+    <p>Best viewed on desktop.</p>
+  </div>
+
+  <script type="module" src="script.js?v=30"></script>
+</body>
+</html>
